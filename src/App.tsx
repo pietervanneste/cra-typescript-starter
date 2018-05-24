@@ -4,28 +4,16 @@ import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
-import Home from './containers/home/Home';
+import Dashboard from './containers/dashboard/Dashboard';
 
 @observer
 class App extends React.Component<any, any> {
-  public state = {
-    count: 0
-  };
-
-  public updateText = (event: any) => {
-    this.setState({ count: event.currentTarget.value });
-  };
   public render() {
     return (
       <div className="App">
-        <div className="App-header" />
-
-        <p className="App-intro">
-          To get started, edit To get started, edit To get started, edit{' '}
-          <code>src/App.tsx</code> and save to reload.
-        </p>
+        <div className="App-header">Breaking News</div>
         <Switch>
-          <Route path={'/'} component={Home} exact />
+          <Route path={'/'} component={Dashboard} exact />
         </Switch>
         <DevTools />
       </div>

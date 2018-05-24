@@ -1,4 +1,4 @@
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import { Provider } from 'mobx-react';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import * as React from 'react';
@@ -6,11 +6,13 @@ import * as ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { Router } from 'react-router-dom';
 import App from './App';
+import WebsocketStore from './containers/store/WebsocketStore';
 import { translationMessages } from './i18n';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 const routing = new RouterStore();
+const websocketStore = new WebsocketStore();
 
 const browserHistory = createBrowserHistory();
 
@@ -18,7 +20,8 @@ const browserHistory = createBrowserHistory();
 const history = syncHistoryWithStore(browserHistory, routing);
 
 const stores = {
-  routing
+  routing,
+  websocketStore
 };
 
 ReactDOM.render(

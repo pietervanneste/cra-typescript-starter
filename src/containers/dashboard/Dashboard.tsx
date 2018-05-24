@@ -4,7 +4,7 @@ import { RouteProps } from 'react-router';
 
 import messages from './messages';
 
-export default class Home extends React.Component<RouteProps, any> {
+export default class Dashboard extends React.Component<RouteProps, any> {
   public render() {
     return (
       <React.Fragment>
